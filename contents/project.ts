@@ -3,6 +3,22 @@ import { Projects } from "@/types";
 
 
 export const projects:Projects[] = [
+     {
+        title: 'GenAI Project',
+        description: 'A chat based application which can give me the answer in real time and calculate borrow.',
+        technologies: ['ReactJs', 'Tailwind CSS', 'NodeJs','MongoDB','Grok LLM'],
+        githubLink: 'https://github.com/AbhiJeetSoni22/GenAI_Project',
+        demoLink: 'https://gen-ai-project-phi.vercel.app/',
+        image: '/projects/gen_ai.png',
+      },
+     {
+        title: 'Grocify - Order Your Grocery ',
+        description: 'A user-friendly grocery shopping web app with product listing, cart, and checkout features.',
+        technologies: ['ReactJs', 'Tailwind CSS', 'Framer Motion','MongoDB'],
+        githubLink: 'https://github.com/AbhiJeetSoni22/Grocify',
+        demoLink: 'https://grocify-sooty.vercel.app/',
+        image: '/projects/Grocify.png',
+      },
     {
         title: 'Maargi - A ride booking platform',
         description: 'A full-stack Ride Booking platform allow user to connect with nearby Saarthi.',
@@ -12,14 +28,7 @@ export const projects:Projects[] = [
         image: '/projects/Maargi.jpg',
       },
      
-      {
-        title: 'Grocify - Order Your Grocery ',
-        description: 'A user-friendly grocery shopping web app with product listing, cart, and checkout features.',
-        technologies: ['ReactJs', 'Tailwind CSS', 'Framer Motion','MongoDB'],
-        githubLink: 'https://github.com/AbhiJeetSoni22/Grocify',
-        demoLink: 'https://grocify-uyuf.onrender.com',
-        image: '/projects/Grocify.png',
-      },
+   
        {
         title: 'ImageKit',
         description: ' A video upload platform where users can upload and manage their videos securely.',
@@ -46,7 +55,7 @@ export const projects:Projects[] = [
       },
    
       {
-        title: 'travel App',
+        title: 'Travel App',
         description: 'A Travel application that provides real-time travel updates.',
         technologies: ['React','Tailwind CSS', 'Framer Motion',],
         githubLink: 'https://github.com/AbhiJeetSoni22/travel_app',
