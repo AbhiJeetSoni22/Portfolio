@@ -52,7 +52,7 @@ const skills = {
   ],
 };
 
-const getIcon = (category:any) => {
+const getIcon = (category: string) => {
   switch (category) {
     case "Backend Engineering":
       return <FiCpu />;
