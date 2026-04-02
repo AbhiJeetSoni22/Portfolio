@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { FiBriefcase, FiCode } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-
 const AboutMe = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -62,12 +61,15 @@ const AboutMe = () => {
     },
   ];
 
-  
   const skills = [
-    { name: "Frontend (Next.js, Tailwind)", level: 85 },
-    { name: "Backend (Node.js, MongoDB)", level: 85 },
-    { name: "CI/CD & Deployment", level: 75 },
-    { name: "Git & Collaboration", level: 85 },
+    { name: "Frontend (Next.js, Tailwind, React)", level: 85 },
+    { name: "Backend (Node.js, Express, APIs)", level: 90 },
+    { name: "Databases (MongoDB, PostgreSQL)", level: 85 },
+    { name: "Generative AI (LLMs, LangChain)", level: 80 },
+    { name: "RAG & Vector Search Systems", level: 80 },
+    { name: "Agentic AI & AI Workflows", level: 75 },
+    { name: "CI/CD, AWS & Deployment", level: 80 },
+    { name: "Git, Collaboration & System Design", level: 85 },
   ];
 
   if (!isMounted) return null;
@@ -217,22 +219,33 @@ const AboutMe = () => {
               <h3 className="text-2xl font-bold text-white mb-6">Who I Am</h3>
 
               <p className="text-gray-300 mb-4">
-                I&apos;m Abhijeet Soni, a passionate Full-Stack (MERN) Developer
-                who enjoys building modern, scalable web applications with a
-                strong focus on performance and clean user experience.
+                I&apos;m Abhijeet Soni, a{" "}
+                <span className="text-cyan-400">Backend & AI Engineer</span>{" "}
+                focused on building
+                <span className="text-cyan-400"> Agentic AI systems</span> and
+                scalable backend architectures. I specialize in designing
+                intelligent applications powered by LLMs, real-time APIs, and
+                modern cloud infrastructure.
               </p>
 
               <p className="text-gray-300 mb-4">
-                My journey into development started with curiosity and evolved
-                through hackathons, internships, and hands-on projects, where I
-                worked on real-world problems using React, Next.js, Node.js,
-                MongoDB, and cloud technologies.
+                My journey started with full-stack development, but I gradually
+                moved towards
+                <span className="text-cyan-400"> Generative AI</span>, working
+                on
+                <span className="text-cyan-400">
+                  {" "}
+                  RAG (Retrieval-Augmented Generation)
+                </span>
+                , embeddings, and AI agents that can reason, retrieve context,
+                and take actions.
               </p>
 
               <p className="text-gray-300">
-                I love learning new tools, improving my backend skills, and
-                experimenting with DevOps practices like CI/CD and cloud
-                deployment to deliver reliable, production-ready applications.
+                I enjoy building production-ready systems using Node.js,
+                TypeScript, and cloud services, while experimenting with tools
+                like LangChain, vector databases, and agent workflows to create
+                intelligent, scalable, and real-world AI solutions.
               </p>
             </motion.div>
             <motion.div
@@ -247,15 +260,25 @@ const AboutMe = () => {
               </div>
 
               <p className="text-sm text-gray-400 mb-3">
-                Backend Developer Intern · Shambho.ai <br />
+                <span className="text-white font-medium">
+                  Backend & AI Intern
+                </span>{" "}
+                · Shambho.ai <br />
                 <span className="italic">Aug 2025 – Dec 2025</span>
               </p>
 
               <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                Worked on backend development for{" "}
-                <span className="text-cyan-400">Agentic AI systems</span>,
-                building flow-based agents and ReAct agent patterns using
-                Node.js and TypeScript.
+                Built and deployed{" "}
+                <span className="text-cyan-400">Agentic AI systems</span> using
+                flow-based architectures and ReAct agent patterns with Node.js &
+                TypeScript.
+              </p>
+
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Worked extensively with{" "}
+                <span className="text-cyan-400">RAG pipelines</span>,
+                integrating vector databases, embeddings, and LLM reasoning to
+                develop context-aware, production-ready AI applications.
               </p>
 
               <p className="text-gray-300 text-sm leading-relaxed">
