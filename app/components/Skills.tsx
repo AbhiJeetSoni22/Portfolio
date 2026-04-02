@@ -1,136 +1,122 @@
 "use client";
-import { motion, Variants } from "framer-motion";
-import { FiCode, FiDatabase, FiCpu, FiLayers } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { FiCode, FiDatabase, FiCpu, FiLayers, FiZap } from "react-icons/fi";
 
 const skills = {
+  "Backend Engineering": [
+    "Node.js",
+    "Express.js",
+    "Django REST Framework",
+    "FastAPI",
+    "GraphQL",
+    "REST APIs",
+    "JWT Authentication",
+    "Asynchronous Programming",
+  ],
   Frontend: [
-    { name: "React", level: 85 },
-    { name: "Next.js", level: 80 },
-    { name: "TypeScript", level: 75 },
-    { name: "Tailwind CSS", level: 90 },
+    "React.js",
+    "Redux",
+    "Next.js",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
   ],
-  Backend: [
-    { name: "Node.js", level: 85 },
-    { name: "Express.js", level: 80 },
-    { name: "Django Rest Framework", level: 70 }, 
-    { name: "REST APIs", level: 85 },
-    { name: "JWT Authentication", level: 75 },
-    { name: "TypeScript", level: 75 },
+  Databases: [
+    "MongoDB",
+    "PostgreSQL",
+    "Mongoose",
+    "Vector Databases",
   ],
-  Database: [
-    { name: "MongoDB", level: 85 },
-    { name: "Mongoose", level: 80 },
-    { name: "Firebase", level: 60 },
+  "AI / Generative AI": [
+    "LLMs",
+    "LangChain.js",
+    "RAG (Retrieval-Augmented Generation)",
+    "Embeddings",
+    "MCP Servers",
+    "Agentic AI",
   ],
-  "DevOps & Tools": [
-    { name: "Git & GitHub", level: 85 },
-    { name: "GitHub Actions (CI/CD)", level: 75 },
-    { name: "Docker", level: 65 },
-    { name: "AWS (S3, IAM)", level: 70 },
+  "Cloud & DevOps": [
+    "AWS EC2",
+    "S3",
+    "CloudFront",
+    "GitHub Actions",
+    "CI/CD",
+  ],
+  "Languages & Tools": [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "Git",
+    "GitHub",
+    "Postman",
   ],
 };
 
+type SkillCategory = keyof typeof skills;
+
+const getIcon = (category: SkillCategory) => {
+  switch (category) {
+    case "Backend Engineering":
+      return <FiCpu />;
+    case "Frontend":
+      return <FiCode />;
+    case "Databases":
+      return <FiDatabase />;
+    case "AI / Generative AI":
+      return <FiZap />;
+    default:
+      return <FiLayers />;
+  }
+};
+
 const Skills = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const item: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const getIcon = (category: string) => {
-    switch (category) {
-      case "Frontend":
-        return <FiCode className="w-6 h-6" />;
-      case "Backend":
-        return <FiCpu className="w-6 h-6" />;
-      case "Database":
-        return <FiDatabase className="w-6 h-6" />;
-      default:
-        return <FiLayers className="w-6 h-6" />;
-    }
-  };
-
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900/50">
-      <div className="container max-w-7xl mx-auto px-4">
+    <section className="py-20 bg-black text-white">
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-800 dark:text-white"
+          className="text-4xl md:text-5xl font-bold text-center mb-14"
         >
-          My{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">
-            Skills
-          </span>
+          My <span className="text-primary">Tech Stack</span>
         </motion.h2>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
-          {Object.entries(skills).map(([category, skills]) => (
-            <motion.div
-              key={category}
-              variants={item}
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800/50 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl dark:hover:shadow-gray-700/30 transition-all duration-300"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary dark:bg-cyan-400/20 dark:text-cyan-400">
-                  {getIcon(category)}
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                  {category}
-                </h3>
-              </div>
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-              <div className="space-y-4">
-                {skills.map((skill) => (
-                  <div key={skill.name} className="space-y-1">
-                    <div className="flex justify-between">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                        {skill.name}
-                      </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-cyan-500"
-                      />
-                    </div>
-                  </div>
+          {(Object.entries(skills) as Array<[SkillCategory, string[]]>).map(
+            ([category, items], i) => (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/5 border border-white/10 backdrop-blur-lg rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 transition"
+              >
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-5 text-primary">
+                  <div className="text-xl">{getIcon(category)}</div>
+                  <h3 className="text-lg font-semibold">{category}</h3>
+                </div>
+
+              {/* Skills */}
+              <div className="flex flex-wrap gap-2">
+                {items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-primary/20 transition"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>
           ))}
-        </motion.div>
+
+        </div>
       </div>
     </section>
   );
