@@ -3,6 +3,15 @@ import { motion } from "framer-motion";
 import { FiCode, FiDatabase, FiCpu, FiLayers, FiZap } from "react-icons/fi";
 
 const skills = {
+  "Agentic AI & GenAI": [
+    "Agentic AI",
+    "LLMs",
+    "RAG (Retrieval-Augmented Generation)",
+    "LangChain.js",
+    "MCP (Model Context Protocol)",
+    "Embeddings",
+    "Vector Databases",
+  ],
   "Backend Engineering": [
     "Node.js",
     "Express.js",
@@ -10,8 +19,11 @@ const skills = {
     "FastAPI",
     "GraphQL",
     "REST APIs",
+    "API Design",
     "JWT Authentication",
+    "Authentication & Authorization",
     "Asynchronous Programming",
+    "System Design",
   ],
   Frontend: [
     "React.js",
@@ -25,20 +37,14 @@ const skills = {
     "MongoDB",
     "PostgreSQL",
     "Mongoose",
+    "Redis",
     "Vector Databases",
-  ],
-  "AI / Generative AI": [
-    "LLMs",
-    "LangChain.js",
-    "RAG (Retrieval-Augmented Generation)",
-    "Embeddings",
-    "MCP Servers",
-    "Agentic AI",
   ],
   "Cloud & DevOps": [
     "AWS EC2",
     "S3",
     "CloudFront",
+    "Docker",
     "GitHub Actions",
     "CI/CD",
   ],
@@ -60,7 +66,7 @@ const getIcon = (category: string) => {
       return <FiCode />;
     case "Databases":
       return <FiDatabase />;
-    case "AI / Generative AI":
+    case "Agentic AI & GenAI":
       return <FiZap />;
     default:
       return <FiLayers />;
@@ -78,7 +84,7 @@ const Skills = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-5xl font-bold text-center mb-14 text-gray-900 dark:text-white"
         >
-          My <span className="text-primary">Tech Stack</span>
+          Tech Stack & <span className="text-primary">AI Expertise</span>
         </motion.h2>
 
         {/* Grid */}
@@ -91,7 +97,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="
+              className={`
                 bg-black/5 dark:bg-white/5 
                 backdrop-blur-md 
                 border border-black/10 dark:border-white/10 
@@ -99,14 +105,26 @@ const Skills = () => {
                 hover:bg-black/10 dark:hover:bg-white/10
                 hover:-translate-y-1 
                 transition-all duration-300
-              "
+                ${category === "Agentic AI & GenAI" 
+                  ? "border-cyan-500/30 shadow-lg shadow-cyan-500/10" 
+                  : ""}
+              `}
             >
               {/* Header */}
-              <div className="flex items-center gap-3 mb-5 text-primary">
-                <div className="text-xl">{getIcon(category)}</div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  {category}
-                </h3>
+              <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center gap-3 text-primary">
+                  <div className="text-xl">{getIcon(category)}</div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    {category}
+                  </h3>
+                </div>
+
+                {/* Highlight badge */}
+                {category === "Agentic AI & GenAI" && (
+                  <span className="text-xs text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">
+                    Core Focus
+                  </span>
+                )}
               </div>
 
               {/* Skills */}
