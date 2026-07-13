@@ -31,8 +31,8 @@ export const projects: Projects[] = [
     ],
     architectureHighlights:
       "Strict backend layering — routers handle HTTP only, all business logic lives in services, every error normalized into one {data, error} envelope. Three-table Postgres schema (jobs, resumes, scrape_runs) with JSONB for skills. Gemini calls run with retry + exponential backoff. Scoring runs as a FastAPI BackgroundTask after the sync response is already returned.",
-    githubLink: "ADD_GITHUB_LINK_HERE",
-    demoLink: "",
+    githubLink: "https://github.com/AbhiJeetSoni22/Job_Hunter",
+    demoLink: "https://job-hunter-blond-one.vercel.app/",
     image: "/projects/ai-internship-hunter.png",
     featured: true,
   },
@@ -67,7 +67,7 @@ export const projects: Projects[] = [
     ],
     architectureHighlights:
       "Layered src/ structure — agent/, ai/, config/, controllers/, middleware/, models/, routes/, services/. Local MCP server spawned via config/mcpClient.js. Chat flow: JWT auth → GROQ tool selection → MCP tool execution → response. Deep-search flow runs independently through the LangChain agent, decoupled from the chat path.",
-    githubLink: "ADD_GITHUB_LINK_HERE",
+    githubLink: "https://github.com/AbhiJeetSoni22/ai-agent-mcp",
     demoLink: "",
     image: "/projects/ai_agent_mcp.png",
     featured: true,
@@ -94,7 +94,8 @@ export const projects: Projects[] = [
     ],
     architectureHighlights:
       "NOTE: only summary bullets were provided for this project, not a full README — architecture section intentionally left thin until fuller docs are supplied.",
-    githubLink: "ADD_GITHUB_LINK_HERE",
+    githubLink:
+      "https://github.com/AbhiJeetSoni22/hackerrank-orchestrate-june26",
     demoLink: "",
     image: "/projects/ai-evidence-review.png",
     featured: true,
